@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import Home from "@/scenes/home/index"
 import Navbar from "@/scenes/navbar";
+import Benefits from "@/scenes/benefits/index";
+import OurClasses from "@/scenes/ourClasses"
 
 import { SelectedPage } from "@/shared/types";
 
@@ -22,7 +24,7 @@ function App() {
   }, [])
 
   return (
-    <div className="app">
+    <div className="app bg-gray-20">
       <Navbar
         isTopOfPage={isTopOfPage} 
         selectedPage={selectedPage}
