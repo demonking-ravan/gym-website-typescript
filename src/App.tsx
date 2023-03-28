@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 import Home from "@/scenes/home/index"
 import Navbar from "@/scenes/navbar";
 import Benefits from "@/scenes/benefits/index";
-import OurClasses from "@/scenes/ourClasses"
+import OurClasses from "@/scenes/ourClasses";
+import Footer from "@/scenes/footer";
 
 import { SelectedPage } from "@/shared/types";
 import ContactUs from "./scenes/contactUs";
@@ -19,9 +20,9 @@ function App() {
         setSelectedPage(SelectedPage.Home);
       }
       if (window.scrollY !== 0) setIsTopOfPage(false);
-    }
-    window.addEventListener('scroll', handleScroll)
-    return window.removeEventListener('scroll', handleScroll);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, [])
 
   return (
@@ -35,6 +36,7 @@ function App() {
       <Benefits setSelectedPage={setSelectedPage} />
       <OurClasses setSelectedPage={setSelectedPage} />
       <ContactUs setSelectedPage={setSelectedPage} />
+      <Footer />
     </div>
   )
 }
